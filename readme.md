@@ -45,8 +45,15 @@ Run the following script to copy alias and theme.
 ./install.sh
 ```
 
-
 ### Performance tips
 To improve performance disable these modules from .zimrc
 - zmodule steeef
 - zmodule completion -->
+
+## Other tools needed for some alias
+
+### Azure Devops CLI
+
+```sh
+az extension add --name azure-devops
+```
