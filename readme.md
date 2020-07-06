@@ -22,14 +22,11 @@ chsh -s `which zsh`
 
 Restart to see changes applied
 
-## Apply zsh theme
-
-First of all we need to update packages so run:
+## Install zimfw
 
 ```sh
-sudo apt-get update
+curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 ```
-
 
 ## Install fzf
 
@@ -38,12 +35,6 @@ Then, we are going to install fzf (an interactive filter for command-line <https
 ```sh
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
-```
-
-## Install zimfw
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 ```
 
 ## Copy configuration files
