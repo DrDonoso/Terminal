@@ -3,8 +3,10 @@ alias kubens='kubectl get ns'
 function kubeusecontext(){
     echo "Select the context to use:"
     context=$(kubectl config get-contexts | fzf --height 30% --layout reverse | awk '{print $1}')
+    if [ "$context" = "*" ]; then
+        context=$(kubectl config current-context)
+    fi
     kubectl config use-context $context
-    echo "Context: $ns"
 }
 
 function kubesetns () {
