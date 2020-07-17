@@ -56,3 +56,15 @@ function kubeforwardsvc () {
 
     kubectl port-forward service/"$svc" "$1":"$port" -n "$ns"
 } 
+
+function kubeenter () {
+    echo "Select the namespace to see the services:"
+    ns=$(kubectl get ns | fzf --height 30% --layout reverse  | awk '{print $1}')
+    echo "Namespace: $ns"
+
+    echo "Select the pod to enter:"
+    pod=$(kubectl get pods -n $ns | fzf --height 30% --layout reverse  | awk '{print $1}')
+    echo "Pod: $pod"
+
+    kubectl exec -it "$pod" sh -n "$ns"
+}
