@@ -10,10 +10,6 @@ sudo apt-get install zsh
 
 Execute zsh intaller
 
-```sh
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-```
-
 And then, set zsh to default
 
 ```sh
