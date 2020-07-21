@@ -44,7 +44,7 @@ Run the following script to copy alias and theme.
 ### Performance tips
 To improve performance disable these modules from .zimrc
 - zmodule steeef
-- zmodule completion -->
+- zmodule completion
 
 ## Other tools needed for some alias
 
