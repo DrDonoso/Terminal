@@ -68,3 +68,17 @@ function kubeenter () {
 
     kubectl exec -it "$pod" sh -n "$ns"
 }
+
+function kuberunjob () {
+    echo "Select the namespace to see the cronjobs:"
+    ns=$(kubectl get ns | fzf --height 30% --layout reverse  | awk '{print $1}')
+    echo "Namespace: $ns"
+
+    echo "Select the cronjob to create a job:"
+    cronjob=$(kubectl get cronjobs -n $ns | fzf --height 30% --layout reverse  | awk '{print $1}')
+    echo "Cronjob: $cronjob"
+
+    uuid=$(uuidgen | cut -c1-3)
+    
+    kubectl create job --from=cronjob/$cronjob "$cronjob-$(uuidgen | cut -c1-3)" -n $ns
+}
