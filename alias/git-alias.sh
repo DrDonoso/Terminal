@@ -1,5 +1,11 @@
-function gitcheckoutbranch() {
+function gitcb() {
     branch=$(git branch -l | fzf --height 30% --layout reverse | awk '{print $1}')
+    git checkout $branch
+}
+
+function gitcrb() {
+    echo "Select a remote branch to checkout:"
+    branch=$(git branch -r -l | fzf --height 30% --layout reverse | awk '{print $1}')
     git checkout $branch
 }
 

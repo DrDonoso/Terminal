@@ -42,7 +42,9 @@ Run the following script to copy alias and theme.
 ```
 
 ### Performance tips
+
 To improve performance disable these modules from .zimrc
+
 - zmodule steeef
 - zmodule completion
 
@@ -52,4 +54,15 @@ To improve performance disable these modules from .zimrc
 
 ```sh
 az extension add --name azure-devops
+```
+
+## Useful tools
+
+Tool to convert from DOS to Unix:
+
+```sh
+sudo apt-get install dos2unix
+
+#Example:
+dos2unix file.txt
 ```
